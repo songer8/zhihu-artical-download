@@ -1,0 +1,36 @@
+{
+    "name": "知乎文章下载",
+    "version": "1.0",
+    "description": "支持知乎文章下载",
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "permissions": [
+        "https://*.zhihu.com/*",
+        "webNavigation"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*.zhihu.com/*",
+                "https://*.zhihu.com/*"
+            ],
+            "js": [
+                "turndown.js",
+                "zhihu.js"
+            ],
+            "css": [
+                "style.css"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "images/dwn-16.png",
+        "48": "images/dwn-48.png",
+        "128": "images/dwn-128.png"
+    },
+    "manifest_version": 2
+}
