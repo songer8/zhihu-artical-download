@@ -44,9 +44,10 @@ let contentItems = document.querySelectorAll('.ContentItem.ArticleItem');
 contentItems.forEach(function (contentItem, index) {
     //add buttom;
     let downloadBtn = document.createElement('button');
+    let contentItemAction = contentItem.querySelector('.RichContent.is-collapsed').querySelector('.ContentItem-actions');
     downloadBtn.className = 'downloadItem';
     downloadBtn.innerHTML = '下载此文章';
-    contentItem.appendChild(downloadBtn);
+    contentItemAction.appendChild(downloadBtn);
 
     //obtain single singleArticleUrl;
     let pageId = JSON.parse(contentItem.getAttribute('data-zop')).itemId;
