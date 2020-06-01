@@ -15,8 +15,8 @@
     "content_scripts": [
         {
             "matches": [
-                "http://*.zhihu.com/*",
-                "https://*.zhihu.com/*"
+                "http://www.zhihu.com/people/*/posts",
+                "https://www.zhihu.com/people/*/posts"
             ],
             "js": [
                 "turndown.js",
