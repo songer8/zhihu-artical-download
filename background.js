@@ -14,8 +14,8 @@ chrome.runtime.onMessage.addListener(
 chrome.runtime.onMessage.addListener(
     function (request,sender, sendResponse) {
         if (request.contentScriptQuery == 'fetchDownload') {
-            var singleArticalUrl = request.singleArticalUrl;
-            fetch(singleArticalUrl)
+            var singleArticleUrl = request.singleArticleUrl;
+            fetch(singleArticleUrl)
                 .then(function(response){
                     return response.json();
                 })

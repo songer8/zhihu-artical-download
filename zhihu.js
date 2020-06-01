@@ -48,15 +48,15 @@ contentItems.forEach(function (contentItem, index) {
     downloadBtn.innerHTML = '下载此文章';
     contentItem.appendChild(downloadBtn);
 
-    //obtain single singleArticalUrl;
+    //obtain single singleArticleUrl;
     let pageId = JSON.parse(contentItem.getAttribute('data-zop')).itemId;
     console.log(pageId);
-    let singleArticalUrl = `https://zhuanlan.zhihu.com/api/articles/${pageId}`;
+    let singleArticleUrl = `https://zhuanlan.zhihu.com/api/articles/${pageId}`;
 
 
     function uDownloadSingle() {
         chrome.runtime.sendMessage(
-            { contentScriptQuery: 'fetchDownload', singleArticalUrl: singleArticalUrl },
+            { contentScriptQuery: 'fetchDownload', singleArticleUrl: singleArticleUrl },
             function (result) {
                 // html to markdown
                 var turndownService = new TurndownService();
